@@ -10,7 +10,7 @@ const BuyActionWindow = ({ uid }) => {
   const [stockPrice, setStockPrice] = useState(0.0);
 
   const handleBuyClick = async () => {
-      await axios.post("http://localhost:8080/newOrder", {
+      await axios.post("https://project-backend-zerodha-stock-trading.onrender.com/newOrder", {
         name: uid,
         qty: Number(stockQuantity),
         price: Number(stockPrice),
@@ -57,7 +57,7 @@ const BuyActionWindow = ({ uid }) => {
           <Link className="btn btn-blue" onClick={handleBuyClick}>
             Buy
           </Link>
-          <Link to="" className="btn btn-grey" onClick={handleCancelClick}>
+          <Link  className="btn btn-grey" onClick={handleCancelClick}>
             Cancel
           </Link>
         </div>
